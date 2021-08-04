@@ -34,7 +34,15 @@ import java.util.Iterator;
  * @author jjoe64
  */
 public class LineGraphSeries<E extends DataPointInterface> extends BaseSeries<E> {
-    private static final long ANIMATION_DURATION = 333;
+    private static  long ANIMATION_DURATION = 333;
+
+    public static long getAnimationDuration(){
+        return ANIMATION_DURATION;
+    }
+
+    public static void setAnimationDuration(long mLongArgAnimDuration){
+        ANIMATION_DURATION = mLongArgAnimDuration;
+    }
 
     /**
      * wrapped styles regarding the line
@@ -90,28 +98,28 @@ public class LineGraphSeries<E extends DataPointInterface> extends BaseSeries<E>
     /**
      * internal paint object
      */
-    private Paint mPaint;
+    protected Paint mPaint;
 
     /**
      * paint for the background
      */
-    private Paint mPaintBackground;
+    protected Paint mPaintBackground;
 
     /**
      * path for the background filling
      */
-    private Path mPathBackground;
+    protected Path mPathBackground;
 
     /**
      * path to the line
      */
-    private Path mPath;
+    protected Path mPath;
 
     /**
      * custom paint that can be used.
      * this will ignore the thickness and color styles.
      */
-    private Paint mCustomPaint;
+    protected Paint mCustomPaint;
 
     /**
      * rendering is animated
