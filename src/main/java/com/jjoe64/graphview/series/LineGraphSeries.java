@@ -91,9 +91,9 @@ public class LineGraphSeries<E extends DataPointInterface> extends BaseSeries<E>
     /**
      * wrapped styles
      */
-    private Styles mStyles;
+    protected Styles mStyles;
 
-    private Paint mSelectionPaint;
+    protected Paint mSelectionPaint;
 
     /**
      * internal paint object
@@ -124,27 +124,27 @@ public class LineGraphSeries<E extends DataPointInterface> extends BaseSeries<E>
     /**
      * rendering is animated
      */
-    private boolean mAnimated;
+    protected boolean mAnimated;
 
     /**
      * last animated value
      */
-    private double mLastAnimatedValue = Double.NaN;
+    protected double mLastAnimatedValue = Double.NaN;
 
     /**
      * time of animation start
      */
-    private long mAnimationStart;
+    protected long mAnimationStart;
 
     /**
      * animation interpolator
      */
-    private AccelerateInterpolator mAnimationInterpolator;
+    protected AccelerateInterpolator mAnimationInterpolator;
 
     /**
      * number of animation frame to avoid lagging
      */
-    private int mAnimationStartFrameNo;
+    protected int mAnimationStartFrameNo;
 
     /**
      * flag whether the line should be drawn as a path
@@ -152,7 +152,7 @@ public class LineGraphSeries<E extends DataPointInterface> extends BaseSeries<E>
      * By default we use drawLine because it has much more peformance.
      * For some styling reasons it can make sense to draw as path.
      */
-    private boolean mDrawAsPath = false;
+    protected boolean mDrawAsPath = false;
 
     /**
      * creates a series without data
@@ -519,7 +519,7 @@ public class LineGraphSeries<E extends DataPointInterface> extends BaseSeries<E>
      * @param pts
      * @param paint
      */
-    private void renderLine(Canvas canvas, float[] pts, Paint paint) {
+    protected void renderLine(Canvas canvas, float[] pts, Paint paint) {
         if (pts.length == 4 && pts[0] == pts[2] && pts[1] == pts[3]) {
             // avoid zero length lines, to makes troubles on some devices
             // see https://github.com/appsthatmatter/GraphView/issues/499
@@ -688,7 +688,7 @@ public class LineGraphSeries<E extends DataPointInterface> extends BaseSeries<E>
     /**
      * @return currently animation is active
      */
-    private boolean isAnimationActive() {
+    protected boolean isAnimationActive() {
         if (mAnimated) {
             long curr = System.currentTimeMillis();
             return curr - mAnimationStart <= ANIMATION_DURATION;

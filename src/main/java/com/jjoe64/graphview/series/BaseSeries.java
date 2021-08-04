@@ -49,7 +49,7 @@ public abstract class BaseSeries<E extends DataPointInterface> implements Series
     /**
      * holds the data
      */
-    final private List<E> mData = new ArrayList<E>();
+    final protected List<E> mData = new ArrayList<E>();
 
     /**
      * stores the used coordinates to find the
@@ -60,29 +60,29 @@ public abstract class BaseSeries<E extends DataPointInterface> implements Series
      *
      * will be filled while drawing via {@link #registerDataPoint(float, float, DataPointInterface)}
      */
-    private Map<PointF, E> mDataPoints = new HashMap<PointF, E>();
+    protected Map<PointF, E> mDataPoints = new HashMap<PointF, E>();
 
     /**
      * title for this series that can be displayed
      * in the legend.
      */
-    private String mTitle;
+    protected String mTitle;
 
     /**
      * base color for this series. will be used also in
      * the legend
      */
-    private int mColor = 0xff0077cc;
+    protected int mColor = 0xff0077cc;
 
     /**
      * cache for lowest y value
      */
-    private double mLowestYCache = Double.NaN;
+    protected double mLowestYCache = Double.NaN;
 
     /**
      * cahce for highest y value
      */
-    private double mHighestYCache = Double.NaN;
+    protected double mHighestYCache = Double.NaN;
 
     /**
      * listener to handle tap events on a data point
@@ -93,8 +93,8 @@ public abstract class BaseSeries<E extends DataPointInterface> implements Series
      * stores the graphviews where this series is used.
      * Can be more than one.
      */
-    private List<WeakReference<GraphView>> mGraphViews;
-    private Boolean mIsCursorModeCache;
+    protected List<WeakReference<GraphView>> mGraphViews;
+    protected Boolean mIsCursorModeCache;
 
     /**
      * creates series without data
