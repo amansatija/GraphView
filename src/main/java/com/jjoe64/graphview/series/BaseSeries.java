@@ -378,7 +378,7 @@ public abstract class BaseSeries<E extends DataPointInterface> implements Series
         }
     }
 
-    private boolean isCursorMode() {
+    protected boolean isCursorMode() {
         if (mIsCursorModeCache != null) {
             return mIsCursorModeCache;
         }
