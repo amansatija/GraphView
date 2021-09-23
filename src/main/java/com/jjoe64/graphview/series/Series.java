@@ -17,6 +17,7 @@
 package com.jjoe64.graphview.series;
 
 import android.graphics.Canvas;
+import android.view.MotionEvent;
 
 import com.jjoe64.graphview.GraphView;
 
@@ -106,7 +107,7 @@ public interface Series<E extends DataPointInterface> {
      * @param x pixel
      * @param y pixel
      */
-    void onTap(float x, float y);
+    void onTap(MotionEvent e,float x, float y);
 
     /**
      * called when the series was added to a graph
