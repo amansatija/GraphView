@@ -451,11 +451,11 @@ public class GraphView extends View {
         // is it a click?
         if (mTapDetector.onTouchEvent(event)) {
             for (Series s : mSeries) {
-                s.onTap(event.getX(), event.getY());
+                s.onTap(event,event.getX(), event.getY());
             }
             if (mSecondScale != null) {
                 for (Series s : mSecondScale.getSeries()) {
-                    s.onTap(event.getX(), event.getY());
+                    s.onTap(event,event.getX(), event.getY());
                 }
             }
         }

@@ -19,6 +19,7 @@ package com.jjoe64.graphview.series;
 import android.graphics.Canvas;
 import android.graphics.PointF;
 import android.util.Log;
+import android.view.MotionEvent;
 
 import com.jjoe64.graphview.GraphView;
 
@@ -302,11 +303,11 @@ public abstract class BaseSeries<E extends DataPointInterface> implements Series
      * @param y pixel
      */
     @Override
-    public void onTap(float x, float y) {
+    public void onTap(MotionEvent e,float x, float y) {
         if (mOnDataPointTapListener != null) {
             E p = findDataPoint(x, y);
             if (p != null) {
-                mOnDataPointTapListener.onTap(this, p);
+                mOnDataPointTapListener.onTap(e,this, p);
             }
         }
     }

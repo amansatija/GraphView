@@ -16,6 +16,8 @@
  */
 package com.jjoe64.graphview.series;
 
+import android.view.MotionEvent;
+
 /**
  * Listener for the tap event which will be
  * triggered when the user touches on a datapoint.
@@ -31,5 +33,5 @@ public interface OnDataPointTapListener {
      * @param series the corresponding series
      * @param dataPoint the data point that was tapped on
      */
-    void onTap(Series series, DataPointInterface dataPoint);
+    void onTap(MotionEvent e,Series series, DataPointInterface dataPoint);
 }
