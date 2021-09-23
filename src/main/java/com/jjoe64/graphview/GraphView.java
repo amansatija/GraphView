@@ -632,9 +632,15 @@ public class GraphView extends View {
     }
 
     public void setCursorMode(boolean b) {
+        this.setCursorMode(b,null);
+    }
+
+    public void setCursorMode(boolean b,CursorMode mArgCursorMode) {
         mIsCursorMode = b;
         if (mIsCursorMode) {
-            if (mCursorMode == null) {
+            if (mArgCursorMode != null) {
+                mCursorMode = mArgCursorMode;
+            }else{
                 mCursorMode = new CursorMode(this);
             }
         } else {

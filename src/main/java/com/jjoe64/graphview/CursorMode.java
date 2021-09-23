@@ -24,7 +24,7 @@ import java.util.Map;
  */
 
 public class CursorMode {
-    private final static class Styles {
+    public final static class Styles {
         public float textSize;
         public int spacing;
         public int padding;
@@ -125,7 +125,7 @@ public class CursorMode {
         }
     }
 
-    protected String getTextForSeries(Series s, DataPointInterface value) {
+    public String getTextForSeries(Series s, DataPointInterface value) {
         StringBuffer txt = new StringBuffer();
         if (s.getTitle() != null) {
             txt.append(s.getTitle());
@@ -135,7 +135,7 @@ public class CursorMode {
         return txt.toString();
     }
 
-    protected void drawLegend(Canvas canvas) {
+    public void drawLegend(Canvas canvas) {
         mTextPaint.setTextSize(mStyles.textSize);
         mTextPaint.setColor(mStyles.textColor);
 
@@ -206,7 +206,7 @@ public class CursorMode {
         return true;
     }
 
-    private void findCurrentDataPoint() {
+    public void findCurrentDataPoint() {
         double selX = 0;
         mCurrentSelection.clear();
         for (Series series : mGraphView.getSeries()) {
