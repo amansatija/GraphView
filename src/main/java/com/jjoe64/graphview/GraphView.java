@@ -632,19 +632,19 @@ public class GraphView extends View {
     }
 
     public void setCursorMode(boolean b) {
-        this.setCursorMode(b,null);
+        this.setCursorMode(b,null,true);
     }
 
-    public void setCursorMode(boolean b,CursorMode mArgCursorMode) {
+    public void setCursorMode(boolean b,CursorMode mArgCursorMode,boolean initIfCursorArgNull) {
         mIsCursorMode = b;
         if (mIsCursorMode) {
             if (mArgCursorMode != null) {
                 mCursorMode = mArgCursorMode;
-            }else{
+            }else if (initIfCursorArgNull){
                 mCursorMode = new CursorMode(this);
             }
         } else {
-            mCursorMode = null;
+//            mCursorMode = null; //why clear the cursor all together
             invalidate();
         }
         for (Series series : mSeries) {
