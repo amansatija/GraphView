@@ -314,7 +314,7 @@ public class GraphView extends View {
             }
         }
 
-        if (mCursorMode != null) {
+        if (isCursorMode()) {
             mCursorMode.draw(canvas);
         }
 
